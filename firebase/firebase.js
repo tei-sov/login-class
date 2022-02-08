@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app/combat";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "Place key here",
+  apiKey: "AIzaSyB9bXUlVyUdE-7jEPkNXozJkISKLlSLIX4",
   authDomain: "voter-17439.firebaseapp.com",
   projectId: "voter-17439",
   storageBucket: "voter-17439.appspot.com",
