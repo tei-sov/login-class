@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Welcomepage from "./welcomepage";
-import Loginpage from "./loginpage";
-import Createaccount from "./createaccount";
-import Homepage from "./homepage";
+import Welcomepage from "../screens/welcomepage";
+import Loginpage from "../screens/loginpage";
+import Createaccount from "../screens/createaccount";
+import Homepage from "../screens/homepage";
 
 const Stack = createStackNavigator();
 

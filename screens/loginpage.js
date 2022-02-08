@@ -28,7 +28,7 @@ const loginpage = () => {
             resizeMode: "contain",
             // marginTop: 70,
           }}
-          source={require("./assets/thumb3.png")}
+          source={require("../assets/thumb3.png")}
         />
       </View>
       <View style={styles.mailbox}>
