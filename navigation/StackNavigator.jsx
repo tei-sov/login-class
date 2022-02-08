@@ -31,7 +31,11 @@ const Stacknavigator = () => {
           options={{ headerShown: false }}
         />
 
-        <Stack.Screen name="Homepage" component={Homepage} />
+        <Stack.Screen
+          name="Homepage"
+          component={Homepage}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

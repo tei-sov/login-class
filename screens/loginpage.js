@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 // import { auth } from "./firebase/firebase";
 
-const loginpage = () => {
+const loginpage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
