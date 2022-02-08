@@ -8,7 +8,7 @@ class Welcomepage extends Component {
         <View style={styles.pic}>
           <Image
             style={{ height: "100%", width: "100%", marginTop: 40 }}
-            source={require("./assets/thumb3.png")}
+            source={require("../assets/thumb3.png")}
           />
         </View>
         <View style={styles.logs}>

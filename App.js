@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, SafeAreaView } from "react-native";
-import Stacknavigator from "./StackNavigator";
+import Stacknavigator from "./navigation/StackNavigator";
 
 class App extends Component {
   render() {
