@@ -6,6 +6,7 @@ import Welcomepage from "../screens/welcomepage";
 import Loginpage from "../screens/loginpage";
 import Createaccount from "../screens/createaccount";
 import Homepage from "../screens/homepage";
+import userprofile from "../screens/userprofile";
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,12 @@ const Stacknavigator = () => {
         <Stack.Screen
           name="Homepage"
           component={Homepage}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Userprofile"
+          component={userprofile}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
