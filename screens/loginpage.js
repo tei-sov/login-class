@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-// import { auth } from "./firebase/firebase";
+import { connect } from "react-redux";
+import { loginEmailAccount } from "../redux/actions/authActions";
+
 
 const loginpage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignUp = () => {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredenitials) => {
-        const user = userCredenitials.user;
-        console.log(user.email);
-      })
-      .catch((error) => alert(error.message));
-  };
+  const signIn=()=>{
+    props.login(email,password)
+  }
 
   return (
     <View style={styles.container}>
@@ -56,7 +52,7 @@ const loginpage = (props) => {
       <View style={styles.btn}>
         <View>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate("Homepage")}
+            onPress={signIn}
             style={{
               backgroundColor: "#c30a0a",
               justifyContent: "center",
@@ -99,7 +95,6 @@ const loginpage = (props) => {
   );
 };
 
-export default loginpage;
 
 const styles = StyleSheet.create({
   container: {
@@ -130,3 +125,13 @@ const styles = StyleSheet.create({
     // backgroundColor: "red",
   },
 });
+
+
+const mapStateToProps=()=>{}
+const mapDispatchToProps={
+  login:loginEmailAccount
+}
+
+export default connect(null,mapDispatchToProps)(loginpage);
+
+
