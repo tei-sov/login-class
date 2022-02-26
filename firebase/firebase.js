@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app/combat";
+// import { initializeApp } from "firebase/app/combat";
+import * as firebase from "firebase"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,6 +14,8 @@ const firebaseConfig = {
   appId: "1:15244790367:web:7c42578817dd26b0df69ea",
 };
 
+
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
@@ -23,4 +26,4 @@ if (!firebase.apps.length) {
 export default firebase;
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);

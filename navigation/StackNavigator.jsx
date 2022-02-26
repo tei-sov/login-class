@@ -11,13 +11,28 @@ import { connect } from "react-redux";
 
 const Stack = createStackNavigator();
 
-const Stacknavigator = ({ auth }) => {
+const Stacknavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        //Returning screens based on users login status
-        {auth.login && auth.user ? (
+        {/* //Returning screens based on users login status */}
+        {/* {auth.login && auth.user ? ( */}
           <Stack.Group>
+          <Stack.Screen
+              name="Loginpage"
+              component={Loginpage}
+              options={{ headerShown: false }}
+            />
+          <Stack.Screen
+              name="Welcome"
+              component={Welcomepage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Createaccount"
+              component={Createaccount}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="Homepage"
               component={Homepage}
@@ -30,38 +45,24 @@ const Stacknavigator = ({ auth }) => {
               options={{ headerShown: false }}
             />
           </Stack.Group>
-        ) : (
-          <Stack.Group>
-            <Stack.Screen
-              name="Welcome"
-              component={Welcomepage}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="Loginpage"
-              component={Loginpage}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="Createaccount"
-              component={Createaccount}
-              options={{ headerShown: false }}
-            />
-          </Stack.Group>
-        )}
+        {/* ) : ( */}
+          {/* <Stack.Group> */}
+          
+          {/* </Stack.Group> */}
+        {/* )} */}
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 //Access state within component
-const mapStateToProps = (state) => {
-  return {
-    auth: state,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     auth: state,
+//   };
+// };
 
 //Connecting component to redux
-export default connect(mapStateToProps, null)(Stacknavigator);
+// export default connect(mapStateToProps, null)(Stacknavigator);
+
+export default Stacknavigator

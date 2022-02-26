@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
@@ -9,9 +10,14 @@ const loginpage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  
+
+  const navigation=useNavigation()
+
   const signIn=()=>{
-    props.login(email,password)
+    navigation.navigate("Homepage")
   }
+  
 
   return (
     <View style={styles.container}>
@@ -127,11 +133,12 @@ const styles = StyleSheet.create({
 });
 
 
-const mapStateToProps=()=>{}
-const mapDispatchToProps={
-  login:loginEmailAccount
-}
+// const mapStateToProps=()=>{}
+// const mapDispatchToProps={
+//   login:loginEmailAccount
+// }
 
-export default connect(null,mapDispatchToProps)(loginpage);
+// export default connect(null,mapDispatchToProps)(loginpage);
 
 
+export default loginpage
