@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Welcomepage from "../screens/welcomepage";
@@ -8,51 +7,55 @@ import Createaccount from "../screens/createaccount";
 import Homepage from "../screens/homepage";
 import userprofile from "../screens/userprofile";
 import { connect } from "react-redux";
+import { StateProvider } from "../StateProvider";
+import userReducer, { initialState } from "../redux/reducers/userReducer";
 
 const Stack = createStackNavigator();
 
 const Stacknavigator = ({ auth }) => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        //Returning screens based on users login status
-        {auth.login && auth.user ? (
-          <Stack.Group>
-            <Stack.Screen
-              name="Homepage"
-              component={Homepage}
-              options={{ headerShown: false }}
-            />
+    <StateProvider initialState={initialState} reducer={userReducer}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          //Returning screens based on users login status
+          {auth.login && auth.user ? (
+            <Stack.Group>
+              <Stack.Screen
+                name="Homepage"
+                component={Homepage}
+                options={{ headerShown: false }}
+              />
 
-            <Stack.Screen
-              name="Userprofile"
-              component={userprofile}
-              options={{ headerShown: false }}
-            />
-          </Stack.Group>
-        ) : (
-          <Stack.Group>
-            <Stack.Screen
-              name="Welcome"
-              component={Welcomepage}
-              options={{ headerShown: false }}
-            />
+              <Stack.Screen
+                name="Userprofile"
+                component={userprofile}
+                options={{ headerShown: false }}
+              />
+            </Stack.Group>
+          ) : (
+            <Stack.Group>
+              <Stack.Screen
+                name="Welcome"
+                component={Welcomepage}
+                options={{ headerShown: false }}
+              />
 
-            <Stack.Screen
-              name="Loginpage"
-              component={Loginpage}
-              options={{ headerShown: false }}
-            />
+              <Stack.Screen
+                name="Loginpage"
+                component={Loginpage}
+                options={{ headerShown: false }}
+              />
 
-            <Stack.Screen
-              name="Createaccount"
-              component={Createaccount}
-              options={{ headerShown: false }}
-            />
-          </Stack.Group>
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
+              <Stack.Screen
+                name="Createaccount"
+                component={Createaccount}
+                options={{ headerShown: false }}
+              />
+            </Stack.Group>
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </StateProvider>
   );
 };
 
