@@ -22,56 +22,98 @@ const homepage = (props) => {
         <Text style={styles.tx2}>Welcome,</Text>
       </View>
       <View style={styles.bx1}>
-        {/* <Image
-          style={{ resizeMode: "contain", alignSelf: "center", height: 100 }}
-          source={require("../assets/coll.jpg")}
-        /> */}
-
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("Createpoll")}
-          style={{
-            backgroundColor: "#c30a0a",
-            justifyContent: "center",
-            margin: 10,
-            borderRadius: 5,
-            padding: 10,
-            width: "70%",
-          }}
-        >
-          <Text style={{ fontWeight: "bold", color: "white" }}>
-            CREATE POLL
-          </Text>
-        </TouchableOpacity>
+        <View style={{ flex: 3 }}>
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("Createpoll")}
+            style={{
+              backgroundColor: "#8973b3",
+              justifyContent: "center",
+              margin: 10,
+              borderRadius: 25,
+              padding: 10,
+              width: "70%",
+            }}
+          >
+            <Text style={{ fontWeight: "bold", color: "white" }}>
+              CREATE POLL
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{ flex: 7, flexDirection: "row" }}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "red",
+              borderRadius: "50%",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              style={{ height: "100%", width: "100%", resizeMode: "cover" }}
+              source={require("../assets/voter1.jpg")}
+            />
+          </View>
+        </View>
       </View>
 
       <View style={styles.bx2}>
         <TouchableOpacity
           style={{
-            backgroundColor: "#c30a0a",
+            backgroundColor: "#4e88c6",
             justifyContent: "center",
             margin: 10,
-            borderRadius: 5,
+            borderRadius: 25,
             padding: 10,
             width: "70%",
           }}
         >
           <Text style={{ fontWeight: "bold", color: "white" }}>CHECK POLL</Text>
         </TouchableOpacity>
+        <View style={{ flex: 7, flexDirection: "row" }}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "red",
+              borderRadius: "50%",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              style={{ height: "100%", width: "100%", resizeMode: "cover" }}
+              source={require("../assets/coll.jpg")}
+            />
+          </View>
+        </View>
       </View>
 
       <View style={styles.bx3}>
         <TouchableOpacity
           style={{
-            backgroundColor: "#c30a0a",
+            backgroundColor: "#d15aa2",
             justifyContent: "center",
             margin: 10,
-            borderRadius: 5,
+            borderRadius: 25,
             padding: 10,
             width: "70%",
           }}
         >
           <Text style={{ fontWeight: "bold", color: "white" }}>TRACK POLL</Text>
         </TouchableOpacity>
+        <View style={{ flex: 7, flexDirection: "row" }}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "red",
+              borderRadius: "50%",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              style={{ height: "100%", width: "100%", resizeMode: "cover" }}
+              source={require("../assets/voter2.jpg")}
+            />
+          </View>
+        </View>
       </View>
 
       <View style={styles.empty}></View>
@@ -103,7 +145,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: "green",
     borderRadius: 10,
-    borderWidth: 1.5,
+    // borderWidth: 1.5,
     margin: 10,
   },
 
@@ -111,7 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: "yellow",
     borderRadius: 10,
-    borderWidth: 1.5,
+    // borderWidth: 1.5,
     margin: 10,
   },
 
@@ -119,7 +161,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: "blue",
     borderRadius: 10,
-    borderWidth: 1.5,
+    // borderWidth: 1.5,
     margin: 10,
   },
 
