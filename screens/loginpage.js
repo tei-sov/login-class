@@ -1,17 +1,19 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { connect } from "react-redux";
 import { loginEmailAccount } from "../redux/actions/authActions";
 
-
 const loginpage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signIn=()=>{
-    props.login(email,password)
-  }
+  const navigation = useNavigation();
+
+  const signIn = () => {
+    navigation.navigate("Homepage");
+  };
 
   return (
     <View style={styles.container}>
@@ -95,7 +97,6 @@ const loginpage = (props) => {
   );
 };
 
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "lightgrey",
@@ -126,12 +127,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// const mapStateToProps=()=>{}
+// const mapDispatchToProps={
+//   login:loginEmailAccount
+// }
 
-const mapStateToProps=()=>{}
-const mapDispatchToProps={
-  login:loginEmailAccount
-}
+// export default connect(null,mapDispatchToProps)(loginpage);
 
-export default connect(null,mapDispatchToProps)(loginpage);
-
-
+export default loginpage;

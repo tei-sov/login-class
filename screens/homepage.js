@@ -22,15 +22,57 @@ const homepage = (props) => {
         <Text style={styles.tx2}>Welcome,</Text>
       </View>
       <View style={styles.bx1}>
-        <Image
+        {/* <Image
           style={{ resizeMode: "contain", alignSelf: "center", height: 100 }}
           source={require("../assets/coll.jpg")}
-        />
+        /> */}
+
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("Createpoll")}
+          style={{
+            backgroundColor: "#c30a0a",
+            justifyContent: "center",
+            margin: 10,
+            borderRadius: 5,
+            padding: 10,
+            width: "70%",
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "white" }}>
+            CREATE POLL
+          </Text>
+        </TouchableOpacity>
       </View>
 
-      <View style={styles.bx2}></View>
+      <View style={styles.bx2}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#c30a0a",
+            justifyContent: "center",
+            margin: 10,
+            borderRadius: 5,
+            padding: 10,
+            width: "70%",
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "white" }}>CHECK POLL</Text>
+        </TouchableOpacity>
+      </View>
 
-      <View style={styles.bx3}></View>
+      <View style={styles.bx3}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#c30a0a",
+            justifyContent: "center",
+            margin: 10,
+            borderRadius: 5,
+            padding: 10,
+            width: "70%",
+          }}
+        >
+          <Text style={{ fontWeight: "bold", color: "white" }}>TRACK POLL</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.empty}></View>
     </View>

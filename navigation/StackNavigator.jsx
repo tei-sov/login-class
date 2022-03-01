@@ -9,62 +9,69 @@ import userprofile from "../screens/userprofile";
 import { connect } from "react-redux";
 import { StateProvider } from "../StateProvider";
 import userReducer, { initialState } from "../redux/reducers/userReducer";
+import createpoll from "../screens/createpoll";
 
 const Stack = createStackNavigator();
 
-const Stacknavigator = ({ auth }) => {
+const Stacknavigator = () => {
   return (
-    <StateProvider initialState={initialState} reducer={userReducer}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          //Returning screens based on users login status
-          {auth.login && auth.user ? (
-            <Stack.Group>
-              <Stack.Screen
-                name="Homepage"
-                component={Homepage}
-                options={{ headerShown: false }}
-              />
+    <NavigationContainer>
+      <Stack.Navigator>
+        {/* //Returning screens based on users login status */}
+        {/* {auth.login && auth.user ? ( */}
+        <Stack.Group>
+          <Stack.Screen
+            name="Welcomepage"
+            component={Welcomepage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Loginpage"
+            component={Loginpage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Createaccount"
+            component={Createaccount}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Homepage"
+            component={Homepage}
+            options={{ headerShown: false }}
+          />
 
-              <Stack.Screen
-                name="Userprofile"
-                component={userprofile}
-                options={{ headerShown: false }}
-              />
-            </Stack.Group>
-          ) : (
-            <Stack.Group>
-              <Stack.Screen
-                name="Welcome"
-                component={Welcomepage}
-                options={{ headerShown: false }}
-              />
+          <Stack.Screen
+            name="Userprofile"
+            component={userprofile}
+            options={{ headerShown: false }}
+          />
 
-              <Stack.Screen
-                name="Loginpage"
-                component={Loginpage}
-                options={{ headerShown: false }}
-              />
+          <Stack.Screen
+            name="Createpoll"
+            component={createpoll}
+            options={{ headerShown: false }}
+            c
+          />
+        </Stack.Group>
+        {/* ) : ( */}
+        {/* <Stack.Group> */}
 
-              <Stack.Screen
-                name="Createaccount"
-                component={Createaccount}
-                options={{ headerShown: false }}
-              />
-            </Stack.Group>
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
-    </StateProvider>
+        {/* </Stack.Group> */}
+        {/* )} */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
 //Access state within component
-const mapStateToProps = (state) => {
-  return {
-    auth: state,
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     auth: state,
+//   };
+// };
 
 //Connecting component to redux
-export default connect(mapStateToProps, null)(Stacknavigator);
+// export default connect(mapStateToProps, null)(Stacknavigator);
+
+export default Stacknavigator;
