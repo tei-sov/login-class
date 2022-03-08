@@ -9,7 +9,7 @@ import userprofile from "../screens/userprofile";
 import { connect } from "react-redux";
 import { StateProvider } from "../StateProvider";
 import userReducer, { initialState } from "../redux/reducers/userReducer";
-import createpoll from "../screens/createpoll";
+import Createpoll from "../screens/createpoll";
 
 const Stack = createStackNavigator();
 
@@ -49,7 +49,7 @@ const Stacknavigator = () => {
 
           <Stack.Screen
             name="Createpoll"
-            component={createpoll}
+            component={Createpoll}
             options={{ headerShown: false }}
             c
           />
